@@ -1,0 +1,61 @@
+@import "../variables.scss";
+
+.page {
+  background-color: $dark-gray-background;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .nav-bar {
+    font-size: calc(300px / 4);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-blue-poke-color;
+    height: 200px;
+    width: 100%;
+    box-shadow: 0px 0px 25px 5px #111111;
+    z-index: 2;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .icon {
+        height: 300px;
+        margin-bottom: -80px;
+        position: absolute;
+        left: calc(50% - 150px);
+        top: 0px;
+      }
+
+      .title {
+        font-weight: normal;
+        color: $light-yellow-poke-color;
+      }
+
+      .part-1 {
+        position: absolute;
+        right: calc(50% + 150px);
+      }
+
+      .part-2 {
+        position: absolute;
+        left: calc(50% + 150px);
+      }
+    }
+  }
+
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-top: 200px;
+  }
+}

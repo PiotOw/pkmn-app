@@ -1,0 +1,17 @@
+@use '~@angular/material' as mat;
+
+@include mat.core();
+
+$pkmn-app-primary: mat.define-palette(mat.$teal-palette, 300);
+$pkmn-app-accent: mat.define-palette(mat.$grey-palette, 200);
+
+$pkmn-app-warn: mat.define-palette(mat.$red-palette);
+
+$pkmn-app-theme: mat.define-dark-theme((
+  color: (
+    primary: $pkmn-app-primary,
+    accent: $pkmn-app-accent,
+    warn: $pkmn-app-warn,
+  )
+));
+@include mat.all-component-themes($pkmn-app-theme);

@@ -1,0 +1,10 @@
+<div class="page">
+	<div class="pokemon-types" *ngIf="pokemonTypes">
+		<div class="type-emblem" *ngFor="let type of pokemonTypes; let i = index" (window:resize)="onResize($event)">
+			<a (click)="onClickTest(i)">
+        <div style="height: 100px; width: 100px; background: lightcoral"></div>
+<!--				<pkmn-type-emblem [types]="[type]" [active]="true"></pkmn-type-emblem>-->
+			</a>
+		</div>
+	</div>
+</div>
