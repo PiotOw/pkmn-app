@@ -7,7 +7,7 @@ import {PokemonType} from "../../../models";
   styleUrls: ['./type-emblem.component.scss']
 })
 export class TypeEmblemComponent implements OnInit {
-  link: string = 'http://localhost:3000/main.js'
+  link: string = 'https://pkmn-details-app.herokuapp.com/main.js'
   @Input() types: PokemonType[] = [];
   @Input() active: boolean | undefined;
 

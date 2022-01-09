@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  public link: string = 'http://localhost:3000/main.js'
+  public link: string = 'https://pkmn-details-app.herokuapp.com/main.js'
 
   public pokemonId: number;
 
