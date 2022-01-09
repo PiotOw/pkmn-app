@@ -1,9 +1,11 @@
 <div class="page">
+  <div class="choose-type">
+    Wybierz typ postaci do wyświetlenia
+  </div>
 	<div class="pokemon-types" *ngIf="pokemonTypes">
-		<div class="type-emblem" *ngFor="let type of pokemonTypes; let i = index" (window:resize)="onResize($event)">
+		<div class="type-emblem" *ngFor="let type of pokemonTypes; let i = index">
 			<a (click)="onClickTest(i)">
-        <div style="height: 100px; width: 100px; background: lightcoral"></div>
-<!--				<pkmn-type-emblem [types]="[type]" [active]="true"></pkmn-type-emblem>-->
+				<pkmn-dtls-type-emblem [types]="[type]" [active]="true"></pkmn-dtls-type-emblem>
 			</a>
 		</div>
 	</div>

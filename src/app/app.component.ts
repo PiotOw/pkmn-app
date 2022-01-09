@@ -1,4 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
+import {PokemonType} from "../models";
 
 @Component({
   selector: 'pkmn-root',
@@ -13,10 +14,10 @@ export class AppComponent {
 
   title = 'pkmn-app';
 
+  public PokemonType = PokemonType;
+
   public onScroll($event: Event): void {
-    console.log($event);
     if (window.scrollY < 200) {
-      console.log(this.icon?.nativeElement.style.height);
       this.icon?.nativeElement.setAttribute('style', `height: ${300 - window.scrollY + 'px; '}; left: ${'calc(50% - ' + (300 - window.scrollY) / 2 + 'px)'}`);
       this.part1?.nativeElement.setAttribute('style', `right: ${'calc(50% + ' + (300 - window.scrollY) / 2 + 'px)'}`);
       this.part2?.nativeElement.setAttribute('style', `left: ${'calc(50% + ' + (300 - window.scrollY) / 2 + 'px)'}`);

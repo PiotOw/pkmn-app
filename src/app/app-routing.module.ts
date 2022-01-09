@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {TypesComponent} from "./types/types.component";
+import {PokemonComponent} from "./pkmn-details-components/pokemon/pokemon.component";
 
 const routes: Routes = [
   {path: '', component: TypesComponent},
-  {path: 'pokemons', loadChildren: './pokemons/pokemons.module#PokemonsModule'},
-  {path: 'pokemon/:id', loadChildren: './pokemon/pokemon.module#PokemonModule'}
+  {path: 'pokemon/:id', component: PokemonComponent}
 ];
 
 @NgModule({

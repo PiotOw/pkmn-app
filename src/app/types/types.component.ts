@@ -3,6 +3,7 @@ import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 import {ApiResponse, PokemonType, Type} from "../../models";
 import {TypeService} from "./services/type.service";
+import {Router} from "@angular/router";
 
 @Component({
 	selector: 'pok-types',
@@ -13,12 +14,12 @@ export class TypesComponent implements OnInit {
 
 	pokemonTypes: PokemonType[] | undefined;
 	breakpoint: number | undefined;
-	widthClass: string | undefined;
 
 	private unsubscribe$ = new Subject<void>();
 
 
-	constructor(private typeService: TypeService) {
+	constructor(private typeService: TypeService,
+              private router: Router) {
 	}
 
 	ngOnInit() {
@@ -33,19 +34,10 @@ export class TypesComponent implements OnInit {
 	}
 
 	onClickTest(index: number): void {
-	}
-
-	onResize(event: any): void {
-		this.breakpoint = Math.floor(window.innerWidth / 210);
-		if(this.breakpoint > 5) {
-			this.breakpoint = 5;
-		}
-		else if(this.breakpoint == 0){
-			this.breakpoint = 1;
-		}
-		this.widthClass = "types-emblem-container-" + this.breakpoint;
-		console.log(this.widthClass);
-	}
+    this.typeService.getRandomPokemonIdOfType(index + 1).subscribe(res => {
+      this.router.navigate([`pokemon/${res}`])
+    })
+  }
 
 	getTypes(): void {
 		this.typeService.getTypes()

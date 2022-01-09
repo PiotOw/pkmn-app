@@ -5,21 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TypesComponent} from "./types/types.component";
-import {TypeEmblemComponent} from "./components/type-emblem/type-emblem.component";
 import {TypeService} from "./types/services/type.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
+import {LazyElementsModule} from "@angular-extensions/elements";
+import {TypeEmblemModule} from "./pkmn-details-components/type-emblem/type-emblem.module";
+import {PokemonModule} from "./pkmn-details-components/pokemon/pokemon.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     TypesComponent,
-    TypeEmblemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    LazyElementsModule,
+    TypeEmblemModule,
+    PokemonModule
   ],
   providers: [
     TypeService,

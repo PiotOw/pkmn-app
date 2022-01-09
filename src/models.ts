@@ -38,12 +38,12 @@ export class PokemonType {
 
 	constructor() {
 		this.type = {
-			name: null
+			name: ''
 		};
 	}
 
 	type: {
-		name: string | null;
+		name: string;
 	};
 
 	static fromType(type: Type): PokemonType {
